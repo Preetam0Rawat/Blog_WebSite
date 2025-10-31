@@ -1,16 +1,17 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
-
+import dotenv from 'dotenv'
 import userRoutes from './routes/user.js'
 import blogRoutes from './routes/blog.js'
-
 import cors from 'cors'
+
+dotenv.config()
 
 const app = express()
 
 //database connection
-mongoose.connect("mongodb+srv://Preetam:zOEAeScPU2HVY8Jb@cluster0.u7r6o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGO_URI)
 .then(()=> console.log("Database connection successful"))
 .catch((error)=> console.log("Error occures while connecting", error))
 
@@ -18,7 +19,7 @@ mongoose.connect("mongodb+srv://Preetam:zOEAeScPU2HVY8Jb@cluster0.u7r6o.mongodb.
 app.use(bodyParser.json())                         //As a mmidlle ware it  parses(convert json to object) before the data with post request reaches the backend router/controller.
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors({
-    origin : 'http://localhost:5173'
+    origin : process.env.FRONTEND_URL
 }))
 
 
@@ -26,4 +27,5 @@ app.use(cors({
 app.use('/user', userRoutes)
 app.use('/blog', blogRoutes)
  
-app.listen(8000, ()=> console.log(`Server running on port 8000`))  
+const PORT = process.env.PORT || 8000
+app.listen(PORT, ()=> console.log(`Server running on port ${PORT}`))  

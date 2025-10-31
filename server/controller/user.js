@@ -47,7 +47,7 @@ export const signin = async(req, res) =>{
       return res.status(401).json({mssg : "Invalid password"})
     }
   
-    const token = jwt.sign({email : existing_user.email, id : existing_user._id}, 'test', {expiresIn : "1h"});
+    const token = jwt.sign({email : existing_user.email, id : existing_user._id}, process.env.JWT_SECRET_KEY , {expiresIn : "1h"});
     return res.status(200).json({mssg : "User sign in successful", result : existing_user, token})
 
   }
