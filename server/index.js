@@ -22,7 +22,6 @@ app.use(cors({
     origin : process.env.FRONTEND_URL
 }))
 
-
 //routes
 app.use('/user', userRoutes)
 app.use('/blog', blogRoutes)
