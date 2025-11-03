@@ -37,8 +37,8 @@ const Signin = () => {
   return (
     <div className="flex h-screen">
       {/* Left side (form) */}
-      <div className="flex flex-col justify-center items-end w-1/2 px-10">
-        <h1 className="text-5xl font-bold w-[30vw]">Sign in</h1>
+      <div className="flex-1 flex flex-col justify-center items-end bg-gray-300">
+        <h1 className="text-5xl font-bold w-[30vw] text-center">SIGN IN</h1>
 
         <form
           onSubmit={handleSignin}
@@ -78,11 +78,11 @@ const Signin = () => {
       </div>
 
       {/* Right side (image) */}
-      <div className="flex w-1/2">
+      <div className="flex justify-end items-center bg-gray-50 w-220">
         <img
           src={siimage}
           alt="signin"
-          className="object-cover max-h-screen max-w-full"
+          className="h-screen w-600 object-cover  mix-blend-multiply"
         />
       </div>
     </div>

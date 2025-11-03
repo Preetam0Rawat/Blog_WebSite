@@ -38,12 +38,13 @@ const Home = () => {
     try {
       if (search.trim() || tags.length > 0) {
         const response = await getBlogBysearch({ search, tags: tags.join(',') })
-        console.log("Search successful", response.data)
+        if (response.data.blogs.length === 0) { alert("No blogs found") }
         setSearchResult(response.data.blogs)
         navigate(`/blog/search?searchQuery=${search || 'none'}&tags=${tags.join(',') || 'none'}`)
-      } else {
+      }
+      else {
         navigate('/')
-        alert("No results found")
+        alert("No blogs found")
       }
     } catch (error) {
       alert(error.response?.data?.mssg || "Search failed")
@@ -54,8 +55,13 @@ const Home = () => {
     <div>
       <Navbar />
 
+      {/* Hero Section
+      <div className='w-full h-190'>
+
+      </div> */}
+
       {/* Search Bar Section */}
-      <div className="p-6 flex flex-col items-center">
+      <div className="bg-white pt-6 flex flex-col items-center">
         <div className="flex flex-wrap justify-center items-center gap-4 w-full md:w-auto">
           {/* Search Input */}
           <input
@@ -64,15 +70,16 @@ const Home = () => {
             placeholder="Search blogs"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="border border-gray-400 rounded-md p-3 w-64 focus:outline-none focus:ring-2 focus:ring-black"
+            className="border border-pink-400 rounded-md p-3 w-64 focus:outline-none focus:ring-2 focus:ring-white"
           />
 
           {/* Tags Input (replaces ChipInput) */}
-          <div className="flex flex-wrap gap-2 border border-gray-400 rounded-md p-2 w-64 min-h-[48px]">
+          <div className="flex flex-wrap gap-2 border border-pink-400 rounded-md p-2 w-64 min-h-[48px]">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-gray-200 px-2 py-1 rounded-full text-sm flex items-center gap-1"
+                className="bg-gray-200
+                 px-2 py-1 rounded-full text-sm flex items-center gap-1"
               >
                 #{tag}
                 <button
@@ -101,7 +108,7 @@ const Home = () => {
           {/* Search Button */}
           <button
             onClick={handleSearch}
-            className="bg-black text-white px-6 py-3 rounded-md hover:bg-[#FFD42F] hover:text-black transition-all duration-300"
+            className="bg-pink-400 text-white px-6 py-3 rounded-md hover:bg-pink-200 hover:text-black transition-all duration-300"
           >
             Search
           </button>
@@ -109,13 +116,13 @@ const Home = () => {
       </div>
 
       {/* Blog Display Section */}
-      <div className="px-6 mt-8">
+      <div className="">
         {searchResult.length > 0 ? (
           <>
-            <h2 className="text-2xl font-semibold mb-6">
-              Search Results: {searchResult.length}
+            <h2 className="text-3xl font-semibold mb-6 text-center pt-20">
+              SEARCH RESULTS: {searchResult.length}
             </h2>
-            <div className="flex flex-wrap justify-center">
+            <div className="bg-white pl-30 pr-30 flex flex-wrap justify-center gap-10 pt-30">
               {searchResult.map((blog) => (
                 <div key={blog._id} className="flex justify-center">
                   <Blog data={blog} />
@@ -125,8 +132,7 @@ const Home = () => {
           </>
         ) : (
           <>
-            <h2 className="text-2xl font-semibold mb-6">All Blogs</h2>
-            <div className="flex flex-wrap justify-center">
+            <div className=" bg-white pl-30 pr-30 flex flex-wrap justify-center gap-10 pt-30">
               {blogs.map((blog) => (
                 <div key={blog._id} className="flex justify-center">
                   <Blog data={blog} />

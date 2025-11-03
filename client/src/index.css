@@ -1,1 +1,116 @@
 @import "tailwindcss";
+
+
+@layer utilities {
+  /* --- Fast, less transparent --- */
+ 
+ @keyframes riseDropFade {
+    0% {
+      transform: translateY(40%);
+      opacity: 0;
+    }
+    50%{
+      transform: translateY(0);
+      opacity: 1;
+    }
+     80% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+    100% {
+      transform: translateY(40%);
+      opacity: 0;
+    }
+  }
+
+  /* --- Medium speed, medium opacity --- */
+  @keyframes dropFade {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    40% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+     80% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(40%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideRight {
+    0% {
+      transform: translateX(-20%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+ @keyframes slideLeft {
+    0% {
+      transform: translateX(20%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* --- Slow, very transparent start for title --- */
+  @keyframes showTitle {
+    0% {
+      opacity: 0;
+    }30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-riseDropFade {
+    animation: riseDropFade 3.5s ease-in-out forwards;
+  }
+
+
+  .animate-dropFade {
+    animation: dropFade 3s ease-out both;
+    animation-delay: 1s;
+  }
+  
+  .animate-slideRight {
+      animation: slideRight 2.3s ease-in backwards;
+      animation-delay: 3.2s; 
+  }
+
+  .animate-slideLeft {
+      animation: slideLeft 2.3s ease-in backwards;
+      animation-delay: 3.2s; 
+  }
+
+  .animate-showTitle{
+    animation: showTitle 2.3s ease-out both;
+    animation-delay: 2.5s;
+  }
+}
+
+
+/* Font-Style */
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+  .font-cursive {
+    font-family: 'Great Vibes', cursive;
+  }
+
+
+}

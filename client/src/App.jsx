@@ -7,6 +7,7 @@ import EditForm from './pages/EditForm.jsx';
 import ViewBlog from './pages/ViewBlog.jsx';
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import { BlogProvider } from './components/BlogContext';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
      <div className="">
       <BrowserRouter>
       <BlogProvider>
+        <ScrollToTop/>
       <Routes>
         <Route path = '/' element = {<Home/>} />
         <Route path = '/signin' element = {<Signin/>}/>

@@ -66,10 +66,10 @@ const EditForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-10 px-6">
-      <div className="w-full max-w-3xl bg-white border-4 border-black rounded-3xl p-10 shadow-lg">
+    <div className="flex flex-col h-screen items-center justify-center  px-6  bg-gradient-to-b from-pink-400 via-white to-pink-300">
+      <div className="w-350 mt-10 bg-gradient-to-b from-white via-pink-300 to-white border-4 border-pink-700 rounded-3xl p-10 shadow-lg">
         <h1 className="text-4xl font-bold mb-8 text-center">
-          Edit Blog Component
+          EDIT YOUR BLOG
         </h1>
 
         {/* Title */}
@@ -136,7 +136,7 @@ const EditForm = () => {
             type="file"
             accept="image/*"
             onChange={handleFileChange}
-            className="mt-2"
+            className="mt-2 bg-pink-400 w-80 cursor-grab border-2"
           />
         </div>
 

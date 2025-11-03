@@ -57,9 +57,9 @@ const CreateForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-10 px-6">
-      <div className="w-full max-w-3xl bg-white border-4 border-black rounded-3xl p-10 shadow-lg">
-        <h1 className="text-4xl font-bold mb-8 text-center">Create Blog</h1>
+    <div className="flex flex-col  h-screen justify-center items-center bg-gradient-to-b from-pink-400 via-pink-200 to-pink-100">
+      <div className=" h-screen w-400 mt-20">
+        <h1 className="text-5xl font-bold mb-8 text-center pt-5">CREATE BLOG</h1>
 
         {/* Title */}
         <input
@@ -68,7 +68,7 @@ const CreateForm = () => {
           placeholder="Title"
           value={formData.title}
           onChange={handleInputChange}
-          className="w-full border border-gray-400 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          className="w-full  border border-gray-400 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
         />
 
         {/* Description */}
@@ -120,12 +120,12 @@ const CreateForm = () => {
         </div>
 
         {/* File Upload */}
-        <div className="mt-6">
+        <div className="mt-6 ">
            <input
             type="file"
             accept="image/*"
             onChange={handleFileChange}
-            className="mt-2"
+            className="mt-2 bg-slate-400 w-80 cursor-grab border-2"
           />
         </div>
 
@@ -137,6 +137,14 @@ const CreateForm = () => {
           Create
         </button>
       </div>
+
+
+
+
+
+
+
+    
     </div>
   );
 };
