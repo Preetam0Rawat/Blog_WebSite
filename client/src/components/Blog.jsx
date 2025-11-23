@@ -18,13 +18,13 @@ export default function Blog({ data }) {
   }
 
   return (
-    <div className="w-[20vw] h-[45vh] rounded-2xl m-6 shadow-lg border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-300">
+    <div className=" md:w-[20vw] md:h-[50vh] 2xl:h-[45vh] rounded-2xl m-6 shadow-lg border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-300">
       {/* Image section */}
-      <div className="h-[240px] w-full overflow-hidden">
+      <div className="h-[240px] w-[80vw]  md:w-full overflow-hidden">
         <img
           src={data.selectedFile}
           alt="blog"
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover md:object-cover hover:scale-105 transition-transform duration-300"
         />
       </div>
 

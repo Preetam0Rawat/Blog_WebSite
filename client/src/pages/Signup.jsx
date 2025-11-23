@@ -42,19 +42,19 @@ const Signup = () => {
   return (
     <div className="flex h-screen w-full">
       {/* Left image section */}
-      <div className="flex w-220  bg-gray-50">
+      <div className="flex md:w-220  bg-gray-50">
         <img
           src={suimage}
           alt="signup"
-          className="h-screen w-full object-cover  mix-blend-multiply"
+          className="h-screen md:w-full object-cover  mix-blend-multiply"
         />
       </div>
 
       {/* Right signup section */}
-      <div className="flex-1 flex flex-col justify-center items-start bg-gray-300">
-        <h1 className="text-5xl font-bold mb-6 w-[30vw] text-center pb-10">SIGN UP</h1>
+      <div className="md:flex-1 flex flex-col justify-center items-start bg-gray-300">
+        <h1 className="md:text-5xl text-3xl  font-bold mb-6 md:w-[30vw] text-center md:pb-10">SIGN UP</h1>
 
-        <div className="flex flex-col items-center w-[30vw] space-y-6">
+        <div className="flex flex-col items-center md:w-[30vw] space-y-6">
           <input
             type="text"
             id="name"
@@ -62,7 +62,7 @@ const Signup = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleInputChange}
-            className="w-4/5 border border-gray-400 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+            className="md:w-4/5 border border-gray-400 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
             required
           />
 
@@ -73,7 +73,7 @@ const Signup = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-4/5 border border-gray-400 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+            className="md:w-4/5 border border-gray-400 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
             required
           />
 
@@ -84,7 +84,7 @@ const Signup = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleInputChange}
-            className="w-4/5 border border-gray-400 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+            className="md:w-4/5 border border-gray-400 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
             required
           />
 
@@ -95,7 +95,7 @@ const Signup = () => {
             placeholder="Confirm Password"
             value={formData.confirmPassword}
             onChange={handleInputChange}
-            className="w-4/5 border border-gray-400 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+            className="mdw-4/5 border border-gray-400 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
             required
           />
 

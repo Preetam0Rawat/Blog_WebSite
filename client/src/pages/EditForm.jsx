@@ -66,8 +66,8 @@ const EditForm = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center  px-6  bg-gradient-to-b from-pink-400 via-white to-pink-300">
-      <div className="w-350 mt-10 bg-gradient-to-b from-white via-pink-300 to-white border-4 border-pink-700 rounded-3xl p-10 shadow-lg">
+    <div className="flex flex-col h-screen items-center justify-center  md:px-6  bg-gradient-to-b from-pink-400 via-white to-pink-300">
+      <div className="md:w-350 md:mt-10 bg-gradient-to-b from-white via-pink-300 to-white md:border-4 border-pink-700 rounded-3xl p-10 shadow-lg">
         <h1 className="text-4xl font-bold mb-8 text-center">
           EDIT YOUR BLOG
         </h1>

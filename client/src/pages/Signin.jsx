@@ -37,12 +37,12 @@ const Signin = () => {
   return (
     <div className="flex h-screen">
       {/* Left side (form) */}
-      <div className="flex-1 flex flex-col justify-center items-end bg-gray-300">
-        <h1 className="text-5xl font-bold w-[30vw] text-center">SIGN IN</h1>
+      <div className="md:flex-1 flex flex-col justify-center items-end bg-gray-300">
+        <h1 className="md:text-5xl text-3xl font-bold md:w-[30vw] text-center">SIGN IN</h1>
 
         <form
           onSubmit={handleSignin}
-          className="flex flex-col justify-center items-center mt-8 w-[30vw]"
+          className="flex flex-col justify-center items-center mt-8 md:sw-[30vw]"
         >
           <input
             id="email"
@@ -51,7 +51,7 @@ const Signin = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleInputChange}
-            className="mt-6 w-4/5 border border-gray-400 rounded-md p-3 text-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="mt-6 md:w-4/5 border border-gray-400 rounded-md p-3 text-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
 
           <input
@@ -61,7 +61,7 @@ const Signin = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleInputChange}
-            className="mt-6 w-4/5 border border-gray-400 rounded-md p-3 text-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="mt-6 md:w-4/5 border border-gray-400 rounded-md p-3 text-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
 
           <Link to="/signup" className="mt-5 underline font-semibold">
@@ -70,7 +70,7 @@ const Signin = () => {
 
           <button
             type="submit"
-            className="mt-10 w-4/5 py-3 text-xl font-semibold text-white bg-black rounded-xl border border-black hover:bg-gray-900 transition-all duration-300"
+            className="mt-10 md:w-4/5 py-3 text-xl font-semibold text-white bg-black rounded-xl border border-black hover:bg-gray-900 transition-all duration-300"
           >
             Sign in
           </button>
@@ -78,7 +78,7 @@ const Signin = () => {
       </div>
 
       {/* Right side (image) */}
-      <div className="flex justify-end items-center bg-gray-50 w-220">
+      <div className="flex justify-end items-center bg-gray-50 md:w-220">
         <img
           src={siimage}
           alt="signin"

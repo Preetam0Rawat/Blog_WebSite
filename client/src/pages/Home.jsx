@@ -62,7 +62,7 @@ const Home = () => {
 
       {/* Search Bar Section */}
       <div className="bg-white pt-6 flex flex-col items-center">
-        <div className="flex flex-wrap justify-center items-center gap-4 w-full md:w-auto">
+        <div className="flex flex-col  md:flex-row flex-wrap justify-center items-center gap-4 w-full md:w-auto">
           {/* Search Input */}
           <input
             type="text"
@@ -132,7 +132,7 @@ const Home = () => {
           </>
         ) : (
           <>
-            <div className=" bg-white pl-30 pr-30 flex flex-wrap justify-center gap-10 pt-30">
+            <div className=" bg-white md:pl-30 md:pr-30 flex flex-wrap justify-center md:gap-5 md:pt-30">
               {blogs.map((blog) => (
                 <div key={blog._id} className="flex justify-center">
                   <Blog data={blog} />

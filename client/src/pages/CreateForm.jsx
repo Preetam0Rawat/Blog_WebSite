@@ -58,8 +58,8 @@ const CreateForm = () => {
 
   return (
     <div className="flex flex-col  h-screen justify-center items-center bg-gradient-to-b from-pink-400 via-pink-200 to-pink-100">
-      <div className=" h-screen w-400 mt-20">
-        <h1 className="text-5xl font-bold mb-8 text-center pt-5">CREATE BLOG</h1>
+      <div className=" h-screen md:w-400 md:mt-20">
+        <h1 className="text-2xl md:text-5xl font-bold mb-8 text-center pt-5">CREATE BLOG</h1>
 
         {/* Title */}
         <input
@@ -125,7 +125,7 @@ const CreateForm = () => {
             type="file"
             accept="image/*"
             onChange={handleFileChange}
-            className="mt-2 bg-slate-400 w-80 cursor-grab border-2"
+            className="mt-2 bg-slate-400 md:w-80 cursor-grab border-2"
           />
         </div>
 

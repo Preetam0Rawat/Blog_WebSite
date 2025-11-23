@@ -26,16 +26,16 @@ const ViewBlog = () => {
 
   return (
     <div
-      className="min-h-screen flex justify-center items-center w-full p-6 bg-cover bg-center"
+      className="min-h-screen flex justify-center items-center w-full p-6 bg-cover  bg-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="w-350 bg-white rounded-3xl shadow-lg p-8 text-center">
+      <div className="md:w-350 bg-white rounded-3xl shadow-lg p-8 text-center">
         {/* Title */}
-        <h2 className="text-4xl font-bold  text-gray-900">{data.title}</h2>
+        <h2 className="md:text-4xl text-2xl font-bold  text-gray-900">{data.title}</h2>
 
         {/* Image */}
         {data.selectedFile && (
-          <div className="w-full h-150 flex justify-center mt-10 mb-10">
+          <div className="w-full md:h-150 flex justify-center mt-10 mb-10">
             <img
               src={data.selectedFile}
               alt="blog visual"
