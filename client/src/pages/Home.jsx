@@ -122,42 +122,42 @@ const Home = () => {
 
       {/* Blog Display Section */}
 
-    {loading ? (
-       <div className="flex justify-center items-center lg:justify-end w-full  top-30 lg:w-[50vw] lg:h-screen ">
-                            <p className="text-3xl text-white mr-5">Loading Data From Backend</p>
-                            <div className="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent"></div>
-                        </div>
-    ):
-    (
-<div className="">
-        {searchResult.length > 0 ? (
-          <>
-            <h2 className="text-3xl font-semibold mb-6 text-center pt-20">
-              SEARCH RESULTS: {searchResult.length}
-            </h2>
-            <div className=" bg-white md:pl-30 md:pr-30 flex flex-wrap justify-center md:gap-5 md:pt-30">
-              {searchResult.map((blog) => (
-                <div key={blog._id} className="flex justify-center">
-                  <Blog data={blog} />
+      {loading ? (
+        <div className="flex justify-center items-center mt-5">
+          <p className="text-2xl md:text-4xl text-pink-400 mr-5">Loading Data From Backend</p>
+          <div className="animate-spin rounded-full h-7 w-7 border-4 border-pink-400 border-t-transparent"></div>
+        </div>
+      ) :
+        (
+          <div className="">
+            {searchResult.length > 0 ? (
+              <>
+                <h2 className="text-3xl font-semibold mb-6 text-center pt-20">
+                  SEARCH RESULTS: {searchResult.length}
+                </h2>
+                <div className=" bg-white md:pl-30 md:pr-30 flex flex-wrap justify-center md:gap-5 md:pt-30">
+                  {searchResult.map((blog) => (
+                    <div key={blog._id} className="flex justify-center">
+                      <Blog data={blog} />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </>
-        ) : (
-          <>
-            <div className=" bg-white md:pl-30 md:pr-30 flex flex-wrap justify-center md:gap-5 md:pt-30">
-              {blogs.map((blog) => (
-                <div key={blog._id} className="flex justify-center">
-                  <Blog data={blog} />
+              </>
+            ) : (
+              <>
+                <div className=" bg-white md:pl-30 md:pr-30 flex flex-wrap justify-center md:gap-5 md:pt-30">
+                  {blogs.map((blog) => (
+                    <div key={blog._id} className="flex justify-center">
+                      <Blog data={blog} />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </>
+              </>
+            )}
+          </div>
         )}
-      </div>
-    )}
 
-      
+
     </div>
   )
 }
