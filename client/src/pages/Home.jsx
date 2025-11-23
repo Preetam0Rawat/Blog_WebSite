@@ -9,6 +9,8 @@ const Home = () => {
   const [tags, setTags] = useState([])
   const [blogs, setBlogs] = useState([])
   const [searchResult, setSearchResult] = useState([])
+  const [loading, setLoading] = useState(true);
+
 
   const navigate = useNavigate()
 
@@ -23,11 +25,14 @@ const Home = () => {
   useEffect(() => {
     const getBlogs = async () => {
       try {
+        setLoading(true);
         const response = await getAllBlogs()
         setBlogs(response.data)
         console.log("Getting all blogs successful", response.data)
       } catch (error) {
         alert(error.response?.data?.mssg || "Failed to fetch blogs")
+      } finally {
+        setLoading(false); // stop loading
       }
     }
 
@@ -116,13 +121,21 @@ const Home = () => {
       </div>
 
       {/* Blog Display Section */}
-      <div className="">
+
+    {loading ? (
+       <div className="flex justify-center items-center lg:justify-end w-full  top-30 lg:w-[50vw] lg:h-screen ">
+                            <p className="text-3xl text-white mr-5">Loading Data From Backend</p>
+                            <div className="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent"></div>
+                        </div>
+    ):
+    (
+<div className="">
         {searchResult.length > 0 ? (
           <>
             <h2 className="text-3xl font-semibold mb-6 text-center pt-20">
               SEARCH RESULTS: {searchResult.length}
             </h2>
-            <div className="bg-white pl-30 pr-30 flex flex-wrap justify-center gap-10 pt-30">
+            <div className=" bg-white md:pl-30 md:pr-30 flex flex-wrap justify-center md:gap-5 md:pt-30">
               {searchResult.map((blog) => (
                 <div key={blog._id} className="flex justify-center">
                   <Blog data={blog} />
@@ -142,6 +155,9 @@ const Home = () => {
           </>
         )}
       </div>
+    )}
+
+      
     </div>
   )
 }
