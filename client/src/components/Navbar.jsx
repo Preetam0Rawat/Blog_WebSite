@@ -44,7 +44,7 @@ const Navbar = () => {
           ) : (
             <button
               onClick={handleSignOut}
-              className="bg-black text-white rounded-full md:text-xl  px-2 md:px-5 py-2  font-medium hover:bg-pink-200 hover:text-black transition-all duration-300"
+              className="bg-white text-red-500 md:text-xl rounded-full px-2 md:px-5 py-2 font-medium hover:bg-pink-200 hover:text-black transition-all duration-300"
             >
               Sign out
             </button>
