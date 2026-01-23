@@ -42,7 +42,7 @@ const Signin = () => {
 
         <form
           onSubmit={handleSignin}
-          className="flex flex-col justify-center items-center mt-8 md:sw-[30vw]"
+          className="flex flex-col justify-center items-center mt-8 md:w-[30vw]"
         >
           <input
             id="email"
