@@ -9,23 +9,23 @@ Built using the MERN stack with a production-ready architecture and cloud deploy
 
 ---
 
-## 🚀 Live Demo
+##  Live Demo
 
-👉 **[Click here to visit the website](https://blog-web-site-seven.vercel.app)**
-
----
-
-## ✨ Features
-
-- 📝 Read blogs about Japanese culture & language
-- 🔐 User authentication (Signup/Login)
-- 🔍 Search articles
-- ✍️ Admin dashboard for creating/editing posts
-- 📱 Responsive design for mobile & desktop
+ **[Click here to visit the website](https://blog-web-site-seven.vercel.app)**
 
 ---
 
-## 🛠 Tech Stack
+##  Features
+
+-  Read blogs about Japanese culture & language
+-  User authentication (Signup/Login)
+-  Search articles
+-  Admin dashboard for creating/editing posts
+-  Responsive design for mobile & desktop
+
+---
+
+##  Tech Stack
 
 ### Frontend
 - React (Vite)
